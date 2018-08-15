@@ -4,6 +4,6 @@
     compress
     shred
     postrotate
-      /usr/bin/killall -HUP rsyslogd
+      /usr/bin/pkill -HUP rsyslogd
     endscript
 }
