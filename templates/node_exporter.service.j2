@@ -8,7 +8,7 @@ ExecStart=/opt/node_exporter/releases/node_exporter-{{ node_exporter_version }}.
 User=prometheus
 Group=prometheus
 Restart=always
-StandardOut=syslog
+StandardOutput=syslog
 SyslogIdentifier=node_exporter
 
 [Install]
