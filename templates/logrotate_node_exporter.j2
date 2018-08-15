@@ -1,0 +1,9 @@
+/var/log/node_exporter/node_exporter.log {
+    daily
+    rotate {{ node_exporter_log_days_keep }}
+    compress
+    shred
+    postrotate
+      /usr/bin/pkill -HUP rsyslogd
+    endscript
+}

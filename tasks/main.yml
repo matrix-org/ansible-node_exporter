@@ -43,6 +43,21 @@
     owner: prometheus
     group: prometheus
 
+- name: Copy syslog config
+  become: yes
+  copy:
+    src: node_exporter.conf
+    dest: /etc/rsyslog.d/node_exporter.conf
+    owner: root
+  notify: restart rsyslog
+
+- name: Template logrotate config
+become: yes
+template:
+  src: logrotate_node_exporter.j2
+  dest: /etc/logrotate.d/node_exporter
+  owner: root
+
 - name: Create systemd config
   template:
     src: node_exporter.service.j2
