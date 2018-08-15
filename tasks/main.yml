@@ -52,11 +52,11 @@
   notify: restart rsyslog
 
 - name: Template logrotate config
-become: yes
-template:
-  src: logrotate_node_exporter.j2
-  dest: /etc/logrotate.d/node_exporter
-  owner: root
+  become: yes
+  template:
+    src: logrotate_node_exporter.j2
+    dest: /etc/logrotate.d/node_exporter
+    owner: root
 
 - name: Create systemd config
   template:
