@@ -1,5 +1,5 @@
-Role Name
-=========
+ansible-node\_exporter
+======================
 
 Deploys a "node\_exporter" under the prometheus user
 
