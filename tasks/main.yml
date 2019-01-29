@@ -27,6 +27,13 @@
     owner: prometheus
     group: prometheus
 
+- name: Make textfile collector directory
+  file:
+    path: /opt/node_exporter/textfile
+    state: directory
+    owner: prometheus
+    group: prometheus
+
 - name: Download node_exporter
   get_url:
     url: https://github.com/prometheus/node_exporter/releases/download/v{{ node_exporter_version }}/node_exporter-{{ node_exporter_version }}.linux-amd64.tar.gz
